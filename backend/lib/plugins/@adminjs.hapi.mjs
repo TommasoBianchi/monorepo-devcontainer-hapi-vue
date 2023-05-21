@@ -1,9 +1,9 @@
 
 'use strict';
 
-import AdminJSHapi from ('@adminjs/hapi');
+import AdminJSHapi from '@adminjs/hapi';
 
-module.exports = {
+export const plugin = {
     plugin: AdminJSHapi,
     options: {
         resources: [],
