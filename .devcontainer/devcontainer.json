@@ -33,7 +33,8 @@
                 "aaron-bond.better-comments",
                 "MS-vsliveshare.vsliveshare",
                 "ms-ossdata.vscode-postgresql",
-                "hashicorp.terraform"
+                "hashicorp.terraform",
+                "crystal-spider.jsdoc-generator"
             ]
         }
     },
