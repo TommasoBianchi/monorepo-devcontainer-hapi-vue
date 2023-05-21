@@ -2,8 +2,7 @@
 
 const usersPlugin = require('../../users-plugin');
 
-module.exports = [
-  {
-    plugin: usersPlugin,
-  },
-];
+module.exports = {
+  plugin: usersPlugin,
+  options: {},
+};

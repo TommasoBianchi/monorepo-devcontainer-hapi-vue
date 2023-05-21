@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const Schwifty = require('@hapipal/schwifty');
+const joiToJsonSchema = require('joi-to-json');
 
 // A user model only with an id and name
 module.exports = class User extends Schwifty.Model {
@@ -30,5 +31,17 @@ module.exports = class User extends Schwifty.Model {
       created_at: Joi.date(),
       updated_at: Joi.date(),
     });
+  }
+
+  /**
+   * Description placeholder
+   * @date 5/21/2023 - 10:08:14 PM
+   *
+   * @static
+   * @readonly
+   * @type {*}
+   */
+  static get jsonSchema() {
+    return joiToJsonSchema(this.joiSchema);
   }
 };

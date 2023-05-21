@@ -4,7 +4,9 @@ const HauteCouture = require('@hapipal/haute-couture');
 const Package = require('../package.json');
 const UserModel = require('./models/user.js');
 
-exports.Model = UserModel;
+exports.models = {
+  user: UserModel,
+};
 
 exports.plugin = {
   pkg: {...Package, name: `${Package.name}/users`},

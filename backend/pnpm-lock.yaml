@@ -4,6 +4,9 @@ dependencies:
   '@adminjs/hapi':
     specifier: ^7.0.0
     version: 7.0.0(@hapi/boom@10.0.1)(@hapi/cookie@12.0.1)(@hapi/hapi@21.3.2)(@hapi/inert@7.1.0)(adminjs@7.0.4)
+  '@adminjs/objection':
+    specifier: ^2.0.0
+    version: 2.0.0(adminjs@7.0.4)(knex@2.4.2)(objection@3.0.1)
   '@hapi/boom':
     specifier: 10.0.1
     version: 10.0.1
@@ -28,6 +31,9 @@ dependencies:
   joi:
     specifier: 17.9.2
     version: 17.9.2
+  joi-to-json:
+    specifier: ^3.1.2
+    version: 3.1.2
   objection:
     specifier: 3.0.1
     version: 3.0.1(knex@2.4.2)
@@ -151,6 +157,19 @@ packages:
       '@hapi/inert': 7.1.0
       adminjs: 7.0.4
       tslib: 2.5.2
+    dev: false
+
+  /@adminjs/objection@2.0.0(adminjs@7.0.4)(knex@2.4.2)(objection@3.0.1):
+    resolution: {integrity: sha512-isZCKfBRXBUUbnCOzzsP7ndrp7Qrm965kNXGB4XcHEx2Dv2zn0ZrOyn13Lj4q4zwIRDedxXV3Evkz81tirphUw==}
+    peerDependencies:
+      adminjs: ^7.0.0
+      knex: ^2.4.2
+      objection: ^3.0.1
+    dependencies:
+      adminjs: 7.0.4
+      knex: 2.4.2(pg@8.11.0)
+      objection: 3.0.1(knex@2.4.2)
+      sqlstring: 2.3.3
     dev: false
 
   /@ampproject/remapping@2.2.1:
@@ -3543,6 +3562,10 @@ packages:
     engines: {node: '>=0.1.90'}
     dev: true
 
+  /combinations@1.0.0:
+    resolution: {integrity: sha512-aVgTfI/dewHblSn4gF+NZHvS7wtwg9YAPF2EknHMdH+xLsXLLIMpmHkSj64Zxs/R2m9VAAgn3bENjssrn7V4vQ==}
+    dev: false
+
   /combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
@@ -4328,6 +4351,14 @@ packages:
   /isobject@3.0.1:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /joi-to-json@3.1.2:
+    resolution: {integrity: sha512-JNOH2NTQq7dmDfEYGJApkKOasaLlgAODU3WMyAmXt1QC33kcPRbKo8ZSb8DI7Gmqb7JvEFK7EeSK9C3rtA9iEA==}
+    dependencies:
+      combinations: 1.0.0
+      lodash: 4.17.21
+      semver-compare: 1.0.0
     dev: false
 
   /joi@17.9.2:
@@ -5569,6 +5600,10 @@ packages:
     resolution: {integrity: sha512-8OwmbklUNzwezjGInmZ+2clQmExQPvomqjL7LFqOYqtmuxRgQYqOD3mHaU+MvZn5FLUeVxVfQjwLZW/n/JFuqg==}
     dev: true
 
+  /semver-compare@1.0.0:
+    resolution: {integrity: sha512-YM3/ITh2MJ5MtzaM429anh+x2jiLVjqILF4m4oyQB18W7Ggea7BfqdH/wGMK7dDiMghv/6WG7znWMwUDzJiXow==}
+    dev: false
+
   /semver@5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
     hasBin: true
@@ -5654,6 +5689,11 @@ packages:
   /split2@4.2.0:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
     engines: {node: '>= 10.x'}
+
+  /sqlstring@2.3.3:
+    resolution: {integrity: sha512-qC9iz2FlN7DQl3+wjwn3802RTyjCx7sDvfQEXchwa6CWOx07/WVfh91gBmQ9fahw8snwGEWU3xGzOt4tFyHLxg==}
+    engines: {node: '>= 0.6'}
+    dev: false
 
   /stdin-discarder@0.1.0:
     resolution: {integrity: sha512-xhV7w8S+bUwlPTb4bAOUQhv8/cSS5offJuX8GQGq32ONF0ZtDWKfkdomM3HMRA+LhX6um/FZ0COqlwsjD53LeQ==}
