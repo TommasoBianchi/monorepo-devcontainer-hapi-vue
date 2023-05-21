@@ -22,6 +22,7 @@
     "@hapipal/haute-couture": "4.3.1",
     "@hapipal/schwifty": "6.2.0",
     "adminjs": "^7.0.4",
+    "hapi-pino": "^12.1.0",
     "joi": "17.9.2",
     "objection": "3.0.1",
     "pg": "8.11.0"
@@ -30,6 +31,7 @@
     "knex": "0.21.x"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "7.21.8",
     "@hapi/code": "9.0.3",
     "@hapi/glue": "8.0.0",
     "@hapi/hapi": "21.3.2",
@@ -39,7 +41,6 @@
     "@hapipal/hpal": "3.1.0",
     "@hapipal/hpal-debug": "2.1.0",
     "@hapipal/toys": "4.0.0",
-    "@babel/eslint-parser": "7.21.8",
     "dotenv": "16.0.3",
     "eslint": "8.41.0",
     "eslint-config-google": "^0.14.0",
