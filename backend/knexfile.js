@@ -10,12 +10,12 @@ const Plugin = require('./lib/plugins/@hapipal.schwifty');
 
 module.exports = Hoek.applyToDefaults(
     {
-        migrations: {
-            directory: Path.relative(process.cwd(), Plugin.options.migrationsDir)
-        }
+      migrations: {
+        directory: Path.relative(process.cwd(), Plugin.options.migrationsDir),
+      },
     },
     Manifest
         .get('/register/plugins', process.env)
-        .find(({ plugin }) => plugin === '@hapipal/schwifty')
-        .options.knex
+        .find(({plugin}) => plugin === '@hapipal/schwifty')
+        .options.knex,
 );

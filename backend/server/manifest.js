@@ -1,59 +1,59 @@
-"use strict";
+'use strict';
 
-const Dotenv = require("dotenv");
-const Confidence = require("@hapipal/confidence");
-const Toys = require("@hapipal/toys");
-const Schwifty = require("@hapipal/schwifty");
+const Dotenv = require('dotenv');
+const Confidence = require('@hapipal/confidence');
+const Toys = require('@hapipal/toys');
+const Schwifty = require('@hapipal/schwifty');
 
 // Pull .env into process.env
-Dotenv.config({ path: `${__dirname}/.env` });
+Dotenv.config({path: `${__dirname}/.env`});
 
 // Glue manifest as a confidence store
 module.exports = new Confidence.Store({
   server: {
-    host: "localhost",
+    host: 'localhost',
     port: {
-      $param: "PORT",
-      $coerce: "number",
+      $param: 'PORT',
+      $coerce: 'number',
       $default: 3000,
     },
     debug: {
-      $filter: "NODE_ENV",
+      $filter: 'NODE_ENV',
       $default: {
-        log: ["error", "start"],
-        request: ["error"],
+        log: ['error', 'start'],
+        request: ['error'],
       },
       production: {
-        request: ["implementation"],
+        request: ['implementation'],
       },
     },
   },
   register: {
     plugins: [
       {
-        plugin: "../lib", // Main plugin
+        plugin: '../lib', // Main plugin
         options: {},
       },
       {
         plugin: {
-          $filter: "NODE_ENV",
-          $default: "@hapipal/hpal-debug",
+          $filter: 'NODE_ENV',
+          $default: '@hapipal/hpal-debug',
           production: Toys.noop,
         },
       },
       {
-        plugin: "@hapipal/schwifty",
+        plugin: '@hapipal/schwifty',
         options: {
-          $filter: "NODE_ENV",
+          $filter: 'NODE_ENV',
           $default: {},
           $base: {
             migrateOnStart: true,
             knex: {
-              client: "postgresql",
+              client: 'postgresql',
               connection: {
-                database: "postgres",
-                user: "postgres",
-                password: "postgres",
+                database: 'postgres',
+                user: 'postgres',
+                password: 'postgres',
               },
               migrations: {
                 stub: Schwifty.migrationsStubPath,
