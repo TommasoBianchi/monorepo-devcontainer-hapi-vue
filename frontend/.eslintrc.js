@@ -10,8 +10,11 @@ module.exports = {
   'overrides': [
   ],
   'parserOptions': {
-    'ecmaVersion': 'latest',
+    'ecmaVersion': 6,
     'sourceType': 'module',
+    'ecmaFeatures': {
+      'modules': true,
+    },
   },
   'plugins': [
     'vue',
