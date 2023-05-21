@@ -1,0 +1,41 @@
+{
+	"name": "monorepo-devcontainer",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "editor.formatOnSave": true,
+                "cSpell.ignorePaths": [
+                    "**/package-lock.json",
+                    "**/node_modules",
+                    ".git/objects",
+                    ".devcontainer"
+                ]
+            },
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "dbaeumer.vscode-eslint",
+                "vue.volar",
+                "christian-kohler.npm-intellisense",
+                "streetsidesoftware.code-spell-checker",
+                "xabikos.javascriptsnippets",
+                "esbenp.prettier-vscode",
+                "redhat.vscode-yaml",
+                "aaron-bond.better-comments",
+                "MS-vsliveshare.vsliveshare",
+                "ms-ossdata.vscode-postgresql",
+                "hashicorp.terraform"
+            ]
+        }
+    },
+	"features": {
+        "ghcr.io/devcontainers-contrib/features/vue-cli:2": {},
+        "ghcr.io/devcontainers/features/terraform:1": {
+            "installTFsec": true
+        }
+    },
+	"forwardPorts": [3000, 5432]
+}
