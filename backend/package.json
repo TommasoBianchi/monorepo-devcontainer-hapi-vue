@@ -15,9 +15,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@adminjs/hapi": "^7.0.0",
     "@hapi/boom": "9.x.x",
+    "@hapi/cookie": "^12.0.1",
+    "@hapi/inert": "^7.1.0",
     "@hapipal/haute-couture": "4.x.x",
     "@hapipal/schwifty": "6.x.x",
+    "adminjs": "^7.0.4",
     "joi": "17.x.x",
     "objection": "2.x.x",
     "pg": "8.11.0"
