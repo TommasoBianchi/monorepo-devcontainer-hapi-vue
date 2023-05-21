@@ -1,0 +1,38 @@
+{
+  "name": "example-api-server",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Tommaso Bianchi <tommaso.bianchi@digitiamo.com>",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node server",
+    "test": "lab -a @hapi/code -L",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@hapi/boom": "9.x.x",
+    "@hapipal/haute-couture": "4.x.x",
+    "joi": "17.x.x"
+  },
+  "devDependencies": {
+    "@hapi/code": "8.x.x",
+    "@hapi/eslint-config-hapi": "13.x.x",
+    "@hapi/eslint-plugin-hapi": "4.x.x",
+    "@hapi/glue": "8.x.x",
+    "@hapi/hapi": "20.x.x",
+    "@hapi/lab": "24.x.x",
+    "@hapipal/confidence": "6.x.x",
+    "@hapipal/hpal": "3.x.x",
+    "@hapipal/hpal-debug": "2.x.x",
+    "@hapipal/toys": "3.x.x",
+    "babel-eslint": "10.x.x",
+    "dotenv": "8.x.x",
+    "eslint": "7.x.x",
+    "exiting": "6.x.x"
+  }
+}
