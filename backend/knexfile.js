@@ -3,15 +3,23 @@
 const Path = require('path');
 const Hoek = require('@hapi/hoek');
 const Manifest = require('./server/manifest');
-const Plugin = require('./lib/plugins/@hapipal.schwifty');
+const fs = require('fs');
 
-// Take schwifty registration's knex option
-// but specify the plugin's migrations directory
+const loadSchwiftyPluginsOptions = () => {
+  const plugins = [
+    'lib',
+    ...fs.readdirSync('./').filter((dir) => dir.endsWith('-plugin')),
+  ];
+  const pluginsWithMigrations = plugins.filter((plugin) =>
+    fs.existsSync(`${plugin}/plugins/@hapipal.schwifty.js`) && fs.existsSync(`${plugin}/migrations`));
+  return pluginsWithMigrations.map((plugin) => require(`./${plugin}/plugins/@hapipal.schwifty.js`).options || {});
+};
 
 module.exports = Hoek.applyToDefaults(
     {
       migrations: {
-        directory: Path.relative(process.cwd(), Plugin.options.migrationsDir),
+        directory: loadSchwiftyPluginsOptions()
+            .map(({migrationsDir = 'migrations '}) => Path.relative(process.cwd(), migrationsDir)),
       },
     },
     Manifest
