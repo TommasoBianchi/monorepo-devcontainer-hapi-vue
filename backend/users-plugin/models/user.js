@@ -26,7 +26,7 @@ module.exports = class User extends Schwifty.Model {
    */
   static get joiSchema() {
     return Joi.object({
-      id: Joi.number().required(),
+      id: Joi.number(),
       name: Joi.string().required(),
       created_at: Joi.date(),
       updated_at: Joi.date(),
