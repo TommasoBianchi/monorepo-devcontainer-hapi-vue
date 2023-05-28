@@ -1,24 +1,26 @@
 {
-	"name": "monorepo-devcontainer-hapi-vue",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"customizations": {
+    "name": "monorepo-devcontainer-hapi-vue",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "customizations": {
         "vscode": {
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "zsh",
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": true
+                },
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
                 "editor.formatOnSave": true,
-                "eslint.format.enable": true,
-                "[javascript]": {
-                    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-                },
-                "[vue]": {
-                    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-                },
-                "cSpell.ignorePaths": [
-                    "**/package-lock.json",
-                    "**/node_modules",
-                    ".git/objects",
-                    ".devcontainer"
+                "editor.rulers": [
+                    80
+                ],
+                "eslint.probe": [
+                    "javascript",
+                    "json",
+                    "jsonc",
+                    "markdown",
+                    "typescript",
+                    "yaml"
                 ]
             },
             "extensions": [
@@ -27,23 +29,26 @@
                 "dbaeumer.vscode-eslint",
                 "vue.volar",
                 "christian-kohler.npm-intellisense",
-                "streetsidesoftware.code-spell-checker",
                 "xabikos.javascriptsnippets",
                 "redhat.vscode-yaml",
                 "aaron-bond.better-comments",
                 "MS-vsliveshare.vsliveshare",
                 "ms-ossdata.vscode-postgresql",
                 "hashicorp.terraform",
-                "crystal-spider.jsdoc-generator"
+                "crystal-spider.jsdoc-generator",
+                "esbenp.prettier-vscode"
             ]
         }
     },
-	"features": {
+    "features": {
         "ghcr.io/devcontainers-contrib/features/vue-cli:2": {},
         "ghcr.io/devcontainers/features/terraform:1": {
             "installTFsec": true
         }
     },
-	"forwardPorts": [3000, 5432],
+    "forwardPorts": [
+        3000,
+        5432
+    ],
     "postStartCommand": "cd backend && pnpm install && cd ../frontend && pnpm install"
 }
