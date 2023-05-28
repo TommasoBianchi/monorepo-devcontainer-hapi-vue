@@ -1,5 +1,5 @@
 {
-	"$schema": "https://unpkg.com/knip@next/schema.json",
-	"entry": ["lib/server/index.js", "lib/index.js", "users-plugin/index.js"],
-	"project": ["**/*.js", "**/**/*.js", "**/**/**/*.js"]
+  "$schema": "https://unpkg.com/knip@next/schema.json",
+  "entry": ["lib/server/index.js", "lib/index.js", "users-plugin/index.js"],
+  "project": ["**/*.js", "**/**/*.js", "**/**/**/*.js"]
 }
