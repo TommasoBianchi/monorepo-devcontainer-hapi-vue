@@ -44,5 +44,6 @@
             "installTFsec": true
         }
     },
-	"forwardPorts": [3000, 5432]
+	"forwardPorts": [3000, 5432],
+    "postStartCommand": "cd backend && pnpm install && cd ../frontend && pnpm install"
 }
