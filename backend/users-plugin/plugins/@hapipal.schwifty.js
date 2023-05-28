@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 module.exports = {
-  options: {
-    migrationsDir: `${__dirname}/../migrations`,
-  },
+	options: {
+		migrationsDir: `${__dirname}/../migrations`,
+	},
 };
