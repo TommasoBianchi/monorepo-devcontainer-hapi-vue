@@ -2,7 +2,7 @@
 
 const Path = require("path");
 const Hoek = require("@hapi/hoek");
-const Manifest = require("./server/manifest");
+const Manifest = require("./server/manifest.js");
 const fs = require("fs");
 
 const loadSchwiftyPluginsOptions = () => {

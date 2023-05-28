@@ -4,7 +4,7 @@
 
 const Code = require("@hapi/code");
 const Lab = require("@hapi/lab");
-const Server = require("../server");
+const Server = require("../server.js");
 const Package = require("../package.json");
 
 // Test shortcuts

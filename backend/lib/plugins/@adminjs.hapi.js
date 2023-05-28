@@ -1,8 +1,8 @@
 
 'use strict';
 
-const Manifest = require('../../server/manifest');
-const {models: usersModels} = require('../../users-plugin');
+const Manifest = require('../../server/manifest.js');
+const {models: usersModels} = require('../../users-plugin/index.js');
 const Knex = require('knex');
 
 module.exports = async (server, options) => {
