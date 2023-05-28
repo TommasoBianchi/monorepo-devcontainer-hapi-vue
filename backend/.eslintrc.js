@@ -128,8 +128,13 @@ module.exports = {
 		// Increase max length of code lines
 		"max-len": ["warn", { code: 120 }],
 
+		// Make sure we allow standard Hapi variables to be unused
+		"no-unused-vars": [
+			"error",
+			{ argsIgnorePattern: "(server|options|request|h)" },
+		],
+
 		// These off/less-strict-by-default rules work well for this repo and we like them on.
-		"@typescript-eslint/no-unused-vars": ["error", { caughtErrors: "all" }],
 		"import/extensions": ["error", "ignorePackages"],
 		"no-only-tests/no-only-tests": "error",
 		"simple-import-sort/exports": "error",
