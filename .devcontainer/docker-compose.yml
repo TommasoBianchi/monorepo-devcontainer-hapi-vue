@@ -18,7 +18,7 @@ services:
   db:
     image: postgres:latest
     volumes:
-      - monorepo-devcontainer-postgres-data:/var/lib/postgresql/data
+      - monorepo-devcontainer-hapi-vue-postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
@@ -28,4 +28,4 @@ services:
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
 volumes:
-  monorepo-devcontainer-postgres-data:
+  monorepo-devcontainer-hapi-vue-postgres-data:

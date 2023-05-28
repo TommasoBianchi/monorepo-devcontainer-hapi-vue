@@ -1,5 +1,5 @@
 {
-	"name": "monorepo-devcontainer",
+	"name": "monorepo-devcontainer-hapi-vue",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"customizations": {
