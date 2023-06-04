@@ -17,6 +17,13 @@ module.exports = new Confidence.Store({
       $coerce: "number",
       $default: 3000,
     },
+    routes: {
+      cors: {
+        $filter: "NODE_ENV",
+        $default: true,
+        production: false, // TODO: securely setup CORS for production
+      },
+    },
     debug: {
       $filter: "NODE_ENV",
       $default: {
